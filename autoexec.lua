@@ -54,3 +54,6 @@ new_env_func("teams", game:GetService("Teams"))
 if does_env_func_exist("global") then
     new_env_func("module", global)
 end
+
+new_env_func("does_env_func_exist", does_env_func_exist)
+new_env_func("new_env_func", new_env_func)
