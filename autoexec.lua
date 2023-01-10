@@ -1,16 +1,16 @@
 local env = getrenv()
 
 local function does_env_func_exist(name)
-	return env[name] ~= nil
+    return env[name] ~= nil
 end
 
 local function new_env_func(name, out)
-	assert(name, "Missing name")
-	if name == "request" then
-		env.syn[name] = out
-		return true
-	end
-	env[name] = out
+    assert(name, "Missing name")
+    if name == "request" then
+    	env.syn[name] = out
+    	return true
+    end
+    env[name] = out
 end
 
 new_env_func("syn", {})
@@ -52,5 +52,5 @@ new_env_func("ts", game:GetService("TweenService"))
 new_env_func("teams", game:GetService("Teams"))
 
 if does_env_func_exist("global") then
-	new_env_func("module", global)
+    new_env_func("module", global)
 end
